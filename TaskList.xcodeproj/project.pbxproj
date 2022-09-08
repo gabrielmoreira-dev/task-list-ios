@@ -14,6 +14,7 @@
 		C0C8D8DD28C99D0500F06BFD /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C8D8DC28C99D0500F06BFD /* Task.swift */; };
 		C0C8D8ED28C9A1F200F06BFD /* TasksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C8D8EC28C9A1F200F06BFD /* TasksViewModel.swift */; };
 		C0C8D8F328C9A40100F06BFD /* TasksServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C8D8F228C9A40100F06BFD /* TasksServiceMock.swift */; };
+		C0C8D8FB28C9AADA00F06BFD /* TasksViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C8D8FA28C9AADA00F06BFD /* TasksViewModelTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		C0C8D8DC28C99D0500F06BFD /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		C0C8D8EC28C9A1F200F06BFD /* TasksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewModel.swift; sourceTree = "<group>"; };
 		C0C8D8F228C9A40100F06BFD /* TasksServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksServiceMock.swift; sourceTree = "<group>"; };
+		C0C8D8FA28C9AADA00F06BFD /* TasksViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewModelTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				C0C8D8B128C996BE00F06BFD /* Info.plist */,
+				C0C8D8FA28C9AADA00F06BFD /* TasksViewModelTest.swift */,
 			);
 			path = TaskListTests;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 					};
 					C0C8D8AA28C996BE00F06BFD = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 						TestTargetID = C0C8D89428C996BC00F06BFD;
 					};
 					C0C8D8B528C996BE00F06BFD = {
@@ -304,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0C8D8FB28C9AADA00F06BFD /* TasksViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +492,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TaskListTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
@@ -497,6 +503,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.TaskListTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TaskList.app/TaskList";
@@ -508,6 +515,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = TaskListTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
