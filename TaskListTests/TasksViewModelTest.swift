@@ -2,20 +2,24 @@ import XCTest
 @testable import TaskList
 
 private final class TasksViewModelDelegateSpy: TasksViewModelDelegate {
-    private(set) var displayLoadingStateCount = 0
-    private(set) var displayErrorCount = 0
-    private(set) var receivedTaskList: [Task] = []
+    enum Message: Equatable {
+        case displayLoadingState
+        case displayTaskList(taskList: [Task])
+        case displayError
+    }
+    
+    private(set) var messages: [Message] = []
     
     func displayLoadingState() {
-        displayLoadingStateCount += 1
+        messages.append(.displayLoadingState)
     }
     
     func displayTaskList(_ taskList: [Task]) {
-        receivedTaskList = taskList
+        messages.append(.displayTaskList(taskList: taskList))
     }
     
     func displayError() {
-        displayErrorCount += 1
+        messages.append(.displayError)
     }
 }
 
@@ -30,7 +34,9 @@ final class TasksViewModelTest: XCTestCase {
     func testLoadTaskList_WhenSucceed_ShouldCallDisplayTaskList() {
         sut.loadTaskList()
         
-        XCTAssertEqual(delegateSpy.displayLoadingStateCount, 1)
-        XCTAssertEqual(delegateSpy.receivedTaskList, TasksServiceMock.taskList)
+        XCTAssertEqual(delegateSpy.messages, [
+            .displayLoadingState,
+            .displayTaskList(taskList: TasksServiceMock.taskList)
+        ])
     }
 }
